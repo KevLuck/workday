@@ -1,8 +1,11 @@
 $(document).ready(function () {
-    var currentTime = dayjs().format('h:mm A');
+    var currentTime = dayjs().format('h:mm: s A');
     var currentDate = dayjs().format('dddd, MMM DD YYYY');
     $(".current-date").html(currentDate);
-    $(".current-time").html(currentTime);
+    $(".current-time").html(currentTime); setInterval(() => {
+        const currentTime = new Date().toLocaleTimeString();
+        $(".current-time").html(currentTime);
+      }, 1000);
 
     $(".saveBtn").on("click", function () {
 
